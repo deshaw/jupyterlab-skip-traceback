@@ -1,0 +1,19 @@
+{
+  "title": "Skip Traceback",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "title": "Enabled",
+      "description": "Enable skip traceback mime render",
+      "default": true
+    },
+    "collapsed": {
+      "type": "boolean",
+      "title": "Collapse Traceback",
+      "description": "Collapse the traceback by default",
+      "default": false
+    }
+  }
+}

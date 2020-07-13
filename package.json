@@ -1,0 +1,64 @@
+{
+  "name": "jupyterlab-skip-traceback",
+  "version": "3.0.0",
+  "description": "A JupyterLab extension for rendering Errors with a copy/paste button and expand/collapse",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/deshaw/jupyterlab-skip-traceback",
+  "bugs": {
+    "url": "https://github.com/deshaw/jupyterlab-skip-traceback/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deshaw/jupyterlab-skip-traceback.git"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}",
+    "schema/*"
+  ],
+  "jupyterlab": {
+    "extension": true,
+    "schemaDir": "schema"
+  },
+  "scripts": {
+    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+    "prettier": "prettier --write '**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}'",
+    "tslint": "tslint --fix -c tslint.json --project tsconfig.json '**/*{.ts,.tsx}'",
+    "lint": "npm run prettier && npm run tslint",
+    "build": "tsc",
+    "prepare": "npm run clean && npm run build",
+    "watch": "tsc -w",
+    "extension:install": "jupyter labextension install jupyterlab-skip-traceback",
+    "extension:uninstall": "jupyter labextension uninstall  jupyterlab-skip-traceback",
+    "extension:enable": "jupyter labextension enable jupyterlab-skip-traceback",
+    "extension:disable": "jupyter labextension disable jupyterlab-skip-traceback"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^2.1.0",
+    "@jupyterlab/settingregistry": "^2.1.0",
+    "@jupyterlab/rendermime": "^2.1.0",
+    "@lumino/widgets": "^1.11.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "tslint": "6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "~3.8.3"
+  }
+}

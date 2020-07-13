@@ -1,0 +1,30 @@
+.skip-traceback {
+  background-color: var(--jp-rendermime-error-background);
+  font-family: var(--jp-code-font-family);
+  color: var(--jp-content-font-color1);
+}
+
+.skip-traceback > button {
+  background-color: transparent;
+  padding: 1px;
+  margin: 2px;
+  display: inline;
+  border: 0;
+}
+
+.skip-traceback > button:hover {
+  background-color: #ffb9b9;
+}
+
+.skip-traceback > button:active {
+  background-color: #ff9090;
+}
+
+.skip-traceback > .short-error {
+  display: inline;
+}
+
+.skip-traceback > .fa-copy {
+  border: dotted;
+  border-width: 1px;
+}
