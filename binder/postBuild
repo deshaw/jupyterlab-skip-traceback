@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o xtrace
+
+node -v
+jupyter lab --version
+
+# Building from source does not currently work, install the latest from npm
+jupyter labextension install jupyterlab-skip-traceback --debug --minimize=False
+
