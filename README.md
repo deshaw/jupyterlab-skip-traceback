@@ -7,7 +7,7 @@ A JupyterLab extension for rendering Errors with a copy/paste button and expand/
 
 This is inspired by the notebook version [here](https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tree/master/src/jupyter_contrib_nbextensions/nbextensions/skip-traceback).
 
-![Screenshot](https://github.com/deshaw/jupyterlab-skip-traceback/blob/master/docs/skip-traceback.gif 'Skip Traceback Screenshot')
+![Screenshot](https://github.com/deshaw/jupyterlab-skip-traceback/blob/master/docs/skip-traceback.gif?raw=true 'Skip Traceback Screenshot')
 
 ## Requirements
 
