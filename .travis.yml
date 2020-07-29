@@ -1,0 +1,5 @@
+language: javascript
+node_js:
+  - '12'
+script:
+  - yarn run lint
