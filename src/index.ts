@@ -18,7 +18,8 @@ const PLUGIN_NAME = 'jupyterlab-skip-traceback';
 export const rendererFactory: IRenderMime.IRendererFactory = {
   safe: true,
   mimeTypes: [MIME_TYPE],
-  createRenderer: (options) => new SkipTracebackWidget(options),
+  createRenderer: (options: IRenderMime.IRendererOptions) =>
+    new SkipTracebackWidget(options),
 };
 
 /**

@@ -18,9 +18,9 @@ interface IError {
   traceback: string[]; // The traceback will contain a list of frames, represented each as a string.
 }
 
-export default class SkipTracebackWidget extends Widget
+export default class SkipTracebackWidget
+  extends Widget
   implements IRenderMime.IRenderer {
-
   constructor(options: IRenderMime.IRendererOptions) {
     super();
     this._mimeType = options.mimeType;
@@ -31,14 +31,14 @@ export default class SkipTracebackWidget extends Widget
     collapsed: true,
   };
 
-  static setDefaults(newDefaults: {}) {
+  static setDefaults(newDefaults: Record<string, unknown>): void {
     SkipTracebackWidget._defaults = {
       ...SkipTracebackWidget._defaults,
       ...newDefaults,
     };
   }
 
-  _toggleTraceback() {
+  _toggleTraceback(): void {
     if (this._toggleBtn && this._tracebackNode) {
       const isToggled = this._toggleBtn.className === TOGGLE_CLOSED_CLASS;
       if (isToggled) {
@@ -51,12 +51,11 @@ export default class SkipTracebackWidget extends Widget
     }
   }
 
-  _copyTraceback() {
+  _copyTraceback(): void {
     if (this._tracebackNode) {
       Clipboard.copyToSystem(this._tracebackNode.textContent || '');
     }
   }
-
 
   renderModel(model: IRenderMime.IMimeModel): Promise<void> {
     this._data = (model.data[this._mimeType] as unknown) as IError;
