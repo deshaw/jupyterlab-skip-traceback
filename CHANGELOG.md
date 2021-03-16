@@ -1,4 +1,10 @@
-## [3.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v3.0.0...v3.0.0) (UNRELEASED)
+## [4.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v3.0.0...v4.0.0) (UNRELEASED)
+
+### Changed
+
+- **BREAKING** Jupyterlab 3 Upgrade
+
+## [3.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v3.0.0...v3.0.0) (20200713)
 
 ### Added
 
