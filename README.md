@@ -35,7 +35,7 @@ The `jlpm` command is JupyterLab's pinned version of
 # Install package in development mode
 pip install -e .
 # Link your development version of the extension with JupyterLab
-jupyter labextension develop . --overwrite
+jupyter-labextension develop . --overwrite
 # Rebuild extension Typescript source after making changes
 jlpm run build
 ```
@@ -77,7 +77,7 @@ rm -rf dist
 python setup.py sdist bdist_wheel
 ```
 
-4. Test this against the test pypi. You can then install from here to test as well:
+4. Test this against the test pypi. You can then install from here to test as well:gi
 
 ```
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
