@@ -67,6 +67,8 @@ const extensionSettings: JupyterFrontEndPlugin<void> = {
         );
       }
     );
+    // eslint-disable-next-line no-console
+    console.log('JupyterLab extension jupyterlab-skip-traceback is activated!');
   },
 };
 
