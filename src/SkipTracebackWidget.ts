@@ -5,8 +5,8 @@ import { IRenderMime, renderText } from '@jupyterlab/rendermime';
 import { Clipboard } from '@jupyterlab/apputils/lib/clipboard';
 
 const BTN_BASE_CLASS = 'minimal jp-Button';
-const COPY_CLASS = `fa fa-fw fa-copy ${BTN_BASE_CLASS}`;
-const TOGGLE_CLOSED_CLASS = `fa fa-caret-right ${BTN_BASE_CLASS}`;
+const COPY_CLASS = `fa fa-fw fa-copy ${BTN_BASE_CLASS} right-align`;
+const TOGGLE_CLOSED_CLASS = `fa fa-caret-right jp-ToolbarButtonComponent ${BTN_BASE_CLASS}`;
 const TOGGLE_OPENED_CLASS = `fa fa-caret-down jp-ToolbarButtonComponent ${BTN_BASE_CLASS}`;
 const SHORT_ERROR_CLASS = 'short-error';
 
@@ -67,7 +67,7 @@ export default class SkipTracebackWidget
 
     const shortError = document.createElement('pre');
     shortError.className = SHORT_ERROR_CLASS;
-    shortError.textContent = `${this._data.ename}: ${this._data.evalue}`;
+    shortError.textContent = `${this._data.ename}`;
     shortError.onclick = this._toggleTraceback.bind(this);
 
     const copyBtn = document.createElement('button');
@@ -77,9 +77,9 @@ export default class SkipTracebackWidget
 
     const span = document.createElement('div');
     span.className = 'skip-traceback';
+    span.appendChild(copyBtn);
     span.appendChild(toggleBtn);
     span.appendChild(shortError);
-    span.appendChild(copyBtn);
     span.appendChild(document.createElement('br'));
 
     const traceback = document.createElement('pre');
