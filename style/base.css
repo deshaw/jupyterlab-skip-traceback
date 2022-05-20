@@ -38,3 +38,8 @@
 .skip-traceback  > .right-align {
   float: right;
 }
+
+.skip-traceback  .red-bold-text {
+  color: #b22b31;
+  font-weight: bold;
+}

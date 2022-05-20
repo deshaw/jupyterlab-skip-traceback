@@ -9,6 +9,7 @@ const COPY_CLASS = `fa fa-fw fa-copy ${BTN_BASE_CLASS} right-align`;
 const TOGGLE_CLOSED_CLASS = `fa fa-caret-right jp-ToolbarButtonComponent ${BTN_BASE_CLASS}`;
 const TOGGLE_OPENED_CLASS = `fa fa-caret-down jp-ToolbarButtonComponent ${BTN_BASE_CLASS}`;
 const SHORT_ERROR_CLASS = 'short-error';
+const RED_BOLD_TEXT_CLASS = 'red-bold-text';
 
 // Defined via: https://nbformat.readthedocs.io/en/latest/format_description.html#error
 interface IError {
@@ -43,9 +44,11 @@ export default class SkipTracebackWidget
       const isToggled = this._toggleBtn.className === TOGGLE_CLOSED_CLASS;
       if (isToggled) {
         this._toggleBtn.className = TOGGLE_OPENED_CLASS;
+        this._shortError.innerHTML = '';
         this.node.appendChild(this._tracebackNode);
       } else {
         this._toggleBtn.className = TOGGLE_CLOSED_CLASS;
+        this._shortError.innerHTML = `<span class="${RED_BOLD_TEXT_CLASS}">${this._data.ename}</span>: ${this._data.evalue}`;
         this.node.removeChild(this._tracebackNode);
       }
     }
@@ -67,8 +70,9 @@ export default class SkipTracebackWidget
 
     const shortError = document.createElement('pre');
     shortError.className = SHORT_ERROR_CLASS;
-    shortError.textContent = `${this._data.ename}`;
+    shortError.innerHTML = '';
     shortError.onclick = this._toggleTraceback.bind(this);
+    this._shortError = shortError;
 
     const copyBtn = document.createElement('button');
     copyBtn.className = COPY_CLASS;
@@ -80,7 +84,6 @@ export default class SkipTracebackWidget
     span.appendChild(copyBtn);
     span.appendChild(toggleBtn);
     span.appendChild(shortError);
-    span.appendChild(document.createElement('br'));
 
     const traceback = document.createElement('pre');
     const rt = renderText({
@@ -112,4 +115,5 @@ export default class SkipTracebackWidget
   private _sanitizer: IRenderMime.ISanitizer;
   private _data?: IError;
   private _mimeType: string;
+  private _shortError?: HTMLPreElement;
 }
