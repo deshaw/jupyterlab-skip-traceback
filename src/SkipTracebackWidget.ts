@@ -19,6 +19,7 @@ interface IError {
   traceback: string[]; // The traceback will contain a list of frames, represented each as a string.
 }
 
+// prettier-ignore
 export default class SkipTracebackWidget
   extends Widget
   implements IRenderMime.IRenderer {
@@ -61,7 +62,7 @@ export default class SkipTracebackWidget
   }
 
   renderModel(model: IRenderMime.IMimeModel): Promise<void> {
-    this._data = (model.data[this._mimeType] as unknown) as IError;
+    this._data = model.data[this._mimeType] as unknown as IError;
 
     const toggleBtn = document.createElement('button');
     toggleBtn.className = TOGGLE_CLOSED_CLASS;

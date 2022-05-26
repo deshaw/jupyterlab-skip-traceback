@@ -1,3 +1,9 @@
+## [4.0.1](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.0...v4.0.1) (20220526)
+
+### Fixed
+
+- Improved rendering of multi-line tracebacks
+
 ## [4.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v3.0.0...v4.0.0) (20210317)
 
 ### Changed
