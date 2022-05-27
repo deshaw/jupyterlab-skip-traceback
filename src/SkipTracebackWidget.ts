@@ -71,7 +71,7 @@ export default class SkipTracebackWidget
 
     const shortError = document.createElement('pre');
     shortError.className = SHORT_ERROR_CLASS;
-    shortError.innerHTML = '';
+    shortError.innerHTML = `<span class="${RED_BOLD_TEXT_CLASS}">${this._data.ename}</span>: ${this._data.evalue}`;
     shortError.onclick = this._toggleTraceback.bind(this);
     this._shortError = shortError;
 
