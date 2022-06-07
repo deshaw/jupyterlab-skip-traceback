@@ -21,7 +21,7 @@ interface IError {
 
 const messageInCollapsedState = (data: IError) => {
   return `<span class="${RED_BOLD_TEXT_CLASS}">${data.ename}</span>: ${data.evalue}`;
-}
+};
 
 // prettier-ignore
 export default class SkipTracebackWidget
