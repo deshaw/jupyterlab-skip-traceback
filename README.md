@@ -73,7 +73,8 @@ git push && git push --tags
 3. Create the artifacts
 
 ```
-rm -rf dist
+rm -rf dist tsconfig.tsbuildinfo lib jupyterlab-skip-traceback/labextension
+jlpm build
 python setup.py sdist bdist_wheel
 ```
 
