@@ -19,6 +19,10 @@ interface IError {
   traceback: string[]; // The traceback will contain a list of frames, represented each as a string.
 }
 
+const messageInCollapsedState = (data: IError) => {
+  return `<span class="${RED_BOLD_TEXT_CLASS}">${data.ename}</span>: ${data.evalue}`;
+};
+
 // prettier-ignore
 export default class SkipTracebackWidget
   extends Widget
@@ -49,7 +53,7 @@ export default class SkipTracebackWidget
         this.node.appendChild(this._tracebackNode);
       } else {
         this._toggleBtn.className = TOGGLE_CLOSED_CLASS;
-        this._shortError.innerHTML = `<span class="${RED_BOLD_TEXT_CLASS}">${this._data.ename}</span>: ${this._data.evalue}`;
+        this._shortError.innerHTML = messageInCollapsedState(this._data);
         this.node.removeChild(this._tracebackNode);
       }
     }
@@ -71,7 +75,7 @@ export default class SkipTracebackWidget
 
     const shortError = document.createElement('pre');
     shortError.className = SHORT_ERROR_CLASS;
-    shortError.innerHTML = '';
+    shortError.innerHTML = messageInCollapsedState(this._data);
     shortError.onclick = this._toggleTraceback.bind(this);
     this._shortError = shortError;
 

@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-skip-traceback",
-  "version": "4.0.1",
+  "version": "4.0.3",
   "description": "A JupyterLab extension for rendering Errors with a copy/paste button and expand/collapse",
   "license": "BSD-3-Clause",
   "author": {"name": "Marc Udoff"},

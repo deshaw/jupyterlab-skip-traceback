@@ -1,3 +1,9 @@
+## [4.0.3](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.1...v4.0.3) (20220613)
+
+### Fixed
+
+- Default rendering when collapsed is set to `true` from Settings
+
 ## [4.0.1](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.0...v4.0.1) (20220526)
 
 ### Fixed

@@ -73,7 +73,8 @@ git push && git push --tags
 3. Create the artifacts
 
 ```
-rm -rf dist
+rm -rf dist tsconfig.tsbuildinfo lib jupyterlab-skip-traceback/labextension
+jlpm build
 python setup.py sdist bdist_wheel
 ```
 
@@ -110,6 +111,9 @@ This plugin was contributed back to the community by the [D. E. Shaw group](http
 ## License
 
 This project is released under a [BSD-3-Clause license](https://github.com/deshaw/jupyterlab-skip-traceback/blob/master/LICENSE.txt).
+
+We love contributions! Before you can contribute, please sign and submit this [Contributor License Agreement (CLA)](https://www.deshaw.com/forms/MzYxRTE4MEMtNDQ4OC00RjI0LTg1QTItMzEwODM1RTYzQzVF).
+This CLA is in place to protect all users of this project.
 
 "Jupyter" is a trademark of the NumFOCUS foundation, of which Project Jupyter is a part.
 
