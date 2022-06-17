@@ -23,7 +23,7 @@ const addMessageInCollapsedState = (
   shortError: HTMLPreElement,
   data: IError
 ) => {
-  const eName = document.createElement("span");
+  const eName = document.createElement('span');
   eName.className = RED_BOLD_TEXT_CLASS;
   eName.textContent = data.ename;
   const eValue = document.createTextNode(`: ${data.evalue}`);
