@@ -27,6 +27,7 @@ const addMessageInCollapsedState = (
   eName.className = RED_BOLD_TEXT_CLASS;
   eName.textContent = data.ename;
   const eValue = document.createTextNode(`: ${data.evalue}`);
+  shortError.innerHTML = '';
   shortError.appendChild(eName);
   shortError.appendChild(eValue);
 };
