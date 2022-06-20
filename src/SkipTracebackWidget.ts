@@ -19,7 +19,7 @@ interface IError {
   traceback: string[]; // The traceback will contain a list of frames, represented each as a string.
 }
 
-const addMessageInCollapsedState = (
+const setMessageInCollapsedState = (
   shortError: HTMLPreElement,
   data: IError
 ) => {
@@ -62,7 +62,7 @@ export default class SkipTracebackWidget
         this.node.appendChild(this._tracebackNode);
       } else {
         this._toggleBtn.className = TOGGLE_CLOSED_CLASS;
-        addMessageInCollapsedState(this._shortError, this._data);
+        setMessageInCollapsedState(this._shortError, this._data);
         this.node.removeChild(this._tracebackNode);
       }
     }
@@ -84,7 +84,7 @@ export default class SkipTracebackWidget
 
     const shortError = document.createElement('pre');
     shortError.className = SHORT_ERROR_CLASS;
-    addMessageInCollapsedState(shortError, this._data);
+    setMessageInCollapsedState(shortError, this._data);
     shortError.onclick = this._toggleTraceback.bind(this);
     this._shortError = shortError;
 
