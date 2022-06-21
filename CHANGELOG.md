@@ -1,4 +1,4 @@
-## [4.0.4](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.3...v4.0.4) (UNRELEASED)
+## [4.0.4](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.3...v4.0.4) (20220621)
 
 ### Fixed
 
