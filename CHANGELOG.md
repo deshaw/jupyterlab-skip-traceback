@@ -1,3 +1,9 @@
+## [4.0.4](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.3...v4.0.4) (20220621)
+
+### Fixed
+
+- Collapsed state renders text instead of HTML
+
 ## [4.0.3](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.1...v4.0.3) (20220613)
 
 ### Fixed
