@@ -27,11 +27,13 @@
 .skip-traceback > .fa-copy {
   border: dotted;
   border-width: 1px;
+  min-height: unset;
+  min-width: unset;
 }
 
 .skip-traceback > .fa-caret-right,
 .skip-traceback > .fa-caret-down {
-  /*To fix shifting of text to the right when toggled*/
+  /* To fix shifting of text to the right when toggled */
   width: 17px;
   height: 17px;
 }

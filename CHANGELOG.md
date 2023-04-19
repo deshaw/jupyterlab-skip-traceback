@@ -16,13 +16,13 @@
 
 - Improved rendering of multi-line tracebacks
 
-## [4.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v3.0.0...v4.0.0) (20210317)
+## 4.0.0 (20210317)
 
 ### Changed
 
 - **BREAKING** Jupyterlab 3 Upgrade
 
-## [3.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v3.0.0...v3.0.0) (20200713)
+## 3.0.0 (20200713)
 
 ### Added
 

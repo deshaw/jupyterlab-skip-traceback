@@ -1,7 +1,8 @@
 {
+  "jupyter.lab.shortcuts": [],
   "title": "Skip Traceback",
+  "description": "jupyterlab-skip-traceback settings.",
   "type": "object",
-  "additionalProperties": true,
   "properties": {
     "enabled": {
       "type": "boolean",
@@ -15,5 +16,6 @@
       "description": "Collapse the traceback by default",
       "default": false
     }
-  }
+  },
+  "additionalProperties": false
 }
