@@ -11,7 +11,7 @@ This is inspired by the notebook version [here](https://github.com/ipython-contr
 
 ## Requirements
 
-- JupyterLab >= 3.0
+- JupyterLab >= 4.0
 
 ## Install
 

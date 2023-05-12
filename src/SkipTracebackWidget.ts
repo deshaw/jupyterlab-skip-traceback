@@ -21,7 +21,7 @@ interface IError {
 
 const setMessageInCollapsedState = (
   shortError: HTMLPreElement,
-  data: IError
+  data: IError,
 ) => {
   const eName = document.createElement('span');
   eName.className = RED_BOLD_TEXT_CLASS;
@@ -54,7 +54,7 @@ export default class SkipTracebackWidget
   }
 
   _toggleTraceback(): void {
-    if (this._toggleBtn && this._tracebackNode) {
+    if (this._toggleBtn && this._tracebackNode && this._shortError && this._data) {
       const isToggled = this._toggleBtn.className === TOGGLE_CLOSED_CLASS;
       if (isToggled) {
         this._toggleBtn.className = TOGGLE_OPENED_CLASS;

@@ -39,7 +39,7 @@ const extensionSettings: JupyterFrontEndPlugin<void> = {
   activate: function (
     app: JupyterFrontEnd,
     rendermime: IRenderMimeRegistry,
-    settingRegistry: ISettingRegistry
+    settingRegistry: ISettingRegistry,
   ) {
     function updateSettings(settings: ISettingRegistry.ISettings) {
       const enabled = settings.get('enabled').composite;
@@ -48,8 +48,8 @@ const extensionSettings: JupyterFrontEndPlugin<void> = {
         rendermime.addFactory(extension.rendererFactory, extension.rank);
       } else {
         // We assume we were the only mime render ever installed and nothing removed us already
-        extension.rendererFactory.mimeTypes.forEach((type) =>
-          rendermime.removeMimeType(type)
+        extension.rendererFactory.mimeTypes.forEach(type =>
+          rendermime.removeMimeType(type),
         );
       }
       const collapsed = settings.get('collapsed').composite;
@@ -63,9 +63,9 @@ const extensionSettings: JupyterFrontEndPlugin<void> = {
       },
       (err: Error) => {
         console.error(
-          `Could not load settings, so did not active ${PLUGIN_NAME}: ${err}`
+          `Could not load settings, so did not active ${PLUGIN_NAME}: ${err}`,
         );
-      }
+      },
     );
     // eslint-disable-next-line no-console
     console.log('JupyterLab extension jupyterlab-skip-traceback is activated!');
