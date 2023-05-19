@@ -73,15 +73,14 @@ git push && git push --tags
 3. Create the artifacts
 
 ```
-rm -rf dist tsconfig.tsbuildinfo lib jupyterlab-skip-traceback/labextension
-jlpm build
-python setup.py sdist bdist_wheel
+rm -rf dist tsconfig.tsbuildinfo lib jupyterlab-skip-traceback/labextension jupyterlab_skip_traceback-*.tar.gz jupyterlab_skip_traceback-*.whl
+hatch build .
 ```
 
 4. Test this against the test pypi. You can then install from here to test as well:gi
 
 ```
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+twine upload --repository-url https://test.pypi.org/legacy/ jupyterlab_skip_traceback-*.tar.gz jupyterlab_skip_traceback-*.whl
 # In a new venv
 pip install --index-url https://test.pypi.org/simple/ jupyterlab_skip_traceback
 ```
@@ -89,7 +88,7 @@ pip install --index-url https://test.pypi.org/simple/ jupyterlab_skip_traceback
 5. Upload this to pypi:
 
 ```
-twine upload dist/*
+twine upload jupyterlab_skip_traceback-*.tar.gz jupyterlab_skip_traceback-*.whl
 ```
 
 ### Uninstall

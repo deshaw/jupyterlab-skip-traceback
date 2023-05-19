@@ -119,3 +119,6 @@ dmypy.json
 
 # Yarn cache
 .yarn/
+
+jupyterlab_skip_traceback-*.tar.gz
+jupyterlab_skip_traceback-*.whl
