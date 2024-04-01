@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-skip-traceback",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "A JupyterLab extension for rendering Errors with a copy/paste button and expand/collapse",
   "license": "BSD-3-Clause",
   "author": {
@@ -31,7 +31,7 @@
   "jupyterlab": {
     "extension": true,
     "schemaDir": "schema",
-    "outputDir": "jupyterlab-skip-traceback/labextension"
+    "outputDir": "jupyterlab_skip_traceback/labextension"
   },
   "scripts": {
     "build": "jlpm build:lib && jlpm build:labextension:dev",
@@ -42,7 +42,7 @@
     "build:prod": "jlpm clean && jlpm build:lib:prod && jlpm build:labextension",
     "clean": "jlpm clean:lib",
     "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
-    "clean:labextension": "rimraf jupyterlab-skip-traceback/labextension jupyterlab-skip-traceback/_version.py",
+    "clean:labextension": "rimraf jupyterlab_skip_traceback/labextension jupyterlab_skip_traceback/_version.py",
     "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
     "clean:lintcache": "rimraf .eslintcache .stylelintcache",
     "eslint": "jlpm eslint:check --fix",
@@ -66,13 +66,13 @@
     "watch:src": "tsc -w --sourceMap"
   },
   "dependencies": {
-    "@jupyterlab/application": "^4.0.0",
-    "@jupyterlab/rendermime": "^4.0.0",
-    "@jupyterlab/settingregistry": "^4.0.0",
-    "@lumino/widgets": "^2.1.1"
+    "@jupyterlab/application": "^4.1.0",
+    "@jupyterlab/rendermime": "^4.1.0",
+    "@jupyterlab/settingregistry": "^4.1.0",
+    "@lumino/widgets": "^2.3.1"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "^4.0.0",
+    "@jupyterlab/builder": "^4.1.0",
     "@types/json-schema": "^7.0.11",
     "@types/react": "^18.0.26",
     "@typescript-eslint/eslint-plugin": "^5.55.0",

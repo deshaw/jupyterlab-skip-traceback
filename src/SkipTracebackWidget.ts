@@ -1,7 +1,7 @@
 import '../style/index.css';
 
 import { Widget } from '@lumino/widgets';
-import { IRenderMime, renderText } from '@jupyterlab/rendermime';
+import { IRenderMime, renderText, renderError } from '@jupyterlab/rendermime';
 import { Clipboard } from '@jupyterlab/apputils/lib/clipboard';
 
 const BTN_BASE_CLASS = 'minimal jp-Button';
@@ -39,7 +39,7 @@ export default class SkipTracebackWidget
   constructor(options: IRenderMime.IRendererOptions) {
     super();
     this._mimeType = options.mimeType;
-    this._sanitizer = options.sanitizer;
+    this._options = options;
   }
 
   private static _defaults = {
@@ -100,14 +100,24 @@ export default class SkipTracebackWidget
     span.appendChild(shortError);
 
     const traceback = document.createElement('pre');
-    const rt = renderText({
-      host: traceback,
-      sanitizer: this._sanitizer,
-      // It should look like stderr
-      source:
-        (model.data['application/vnd.jupyter.stderr'] as string) ||
-        this._data.traceback.join('\n'),
-    });
+    // It should look like stderr
+    const source = (model.data['application/vnd.jupyter.stderr'] as string) ||
+          this._data.traceback.join('\n');
+
+    let renderedPromise: Promise<void>;
+    if (typeof renderError !== 'undefined') {
+      renderedPromise = renderError({
+        ...this._options,
+        host: traceback,
+        source
+      });
+    } else {
+      renderedPromise = renderText({
+        ...this._options,
+        host: traceback,
+        source
+      });
+    }
     const tbDiv = document.createElement('div');
     tbDiv.className = 'jp-RenderedText';
     tbDiv.setAttribute('data-mime-type', 'application/vnd.jupyter.stderr');
@@ -121,12 +131,12 @@ export default class SkipTracebackWidget
       this._toggleTraceback();
     }
     // Don't finish until we render the text
-    return rt;
+    return renderedPromise;
   }
 
   private _toggleBtn?: HTMLButtonElement;
   private _tracebackNode?: HTMLDivElement;
-  private _sanitizer: IRenderMime.ISanitizer;
+  private _options: IRenderMime.IRendererOptions;
   private _data?: IError;
   private _mimeType: string;
   private _shortError?: HTMLPreElement;

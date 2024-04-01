@@ -1,3 +1,9 @@
+## [5.1.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v5.0.0...v5.1.0) (20240331)
+
+### Added
+
+- Support for clicking on paths in tracebacks (requires >=jupyterlab@4.1) #20
+
 ## [5.0.0](https://github.com/deshaw/jupyterlab-skip-traceback/compare/v4.0.4...v5.0.0) (20220519)
 
 ### Changed

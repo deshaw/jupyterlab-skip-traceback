@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5", "hatch-nodejs-version"]
+requires = ["hatchling>=1.5.0", "jupyterlab>=4.1.0,<5", "hatch-nodejs-version>=0.3.2"]
 build-backend = "hatchling.build"
 
 [project]
@@ -32,24 +32,24 @@ source = "nodejs"
 fields = ["description", "authors", "urls"]
 
 [tool.hatch.build.targets.sdist]
-artifacts = ["jupyterlab-skip-traceback/labextension"]
+artifacts = ["jupyterlab_skip_traceback/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlab-skip-traceback/labextension" = "share/jupyter/labextensions/jupyterlab-skip-traceback"
+"jupyterlab_skip_traceback/labextension" = "share/jupyter/labextensions/jupyterlab-skip-traceback"
 "install.json" = "share/jupyter/labextensions/jupyterlab-skip-traceback/install.json"
 
 [tool.hatch.build.hooks.version]
-path = "jupyterlab-skip-traceback/_version.py"
+path = "jupyterlab_skip_traceback/_version.py"
 
 [tool.hatch.build.hooks.jupyter-builder]
 dependencies = ["hatch-jupyter-builder>=0.5"]
 build-function = "hatch_jupyter_builder.npm_builder"
 ensured-targets = [
-    "jupyterlab-skip-traceback/labextension/static/style.js",
-    "jupyterlab-skip-traceback/labextension/package.json",
+    "jupyterlab_skip_traceback/labextension/static/style.js",
+    "jupyterlab_skip_traceback/labextension/package.json",
 ]
-skip-if-exists = ["jupyterlab-skip-traceback/labextension/static/style.js"]
+skip-if-exists = ["jupyterlab_skip_traceback/labextension/static/style.js"]
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 build_cmd = "build:prod"
@@ -59,14 +59,14 @@ npm = ["jlpm"]
 build_cmd = "install:extension"
 npm = ["jlpm"]
 source_dir = "src"
-build_dir = "jupyterlab-skip-traceback/labextension"
+build_dir = "jupyterlab_skip_traceback/labextension"
 
 [tool.jupyter-releaser.options]
 version_cmd = "hatch version"
 
 [tool.jupyter-releaser.hooks]
 before-build-npm = [
-    "python -m pip install 'jupyterlab>=4.0.0b0,<5'",
+    "python -m pip install 'jupyterlab>=4.1.0a4,<5'",
     "jlpm",
     "jlpm build:prod"
 ]
