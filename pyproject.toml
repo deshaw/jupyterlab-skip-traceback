@@ -1,11 +1,12 @@
 [build-system]
-requires = ["hatchling>=1.5.0", "jupyterlab>=4.1.0,<5", "hatch-nodejs-version>=0.3.2"]
+requires = ["hatchling>=1.5.0", "jupyter-builder>=1.2.0,<2", "hatch-nodejs-version>=0.3.2"]
 build-backend = "hatchling.build"
 
 [project]
 name = "jupyterlab-skip-traceback"
 readme = "README.md"
-license = { file = "LICENSE.txt" }
+license = "BSD-3-Clause"
+license-files = ["LICENSE.txt"]
 requires-python = ">=3.8"
 classifiers = [
     "Framework :: Jupyter",
@@ -13,7 +14,6 @@ classifiers = [
     "Framework :: Jupyter :: JupyterLab :: 4",
     "Framework :: Jupyter :: JupyterLab :: Extensions",
     "Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt",
-    "License :: OSI Approved :: BSD License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -24,6 +24,12 @@ classifiers = [
 dependencies = [
 ]
 dynamic = ["version", "description", "authors", "urls", "keywords"]
+
+[project.optional-dependencies]
+dev = [
+    "jupyterlab>=4",
+    "jupyter-builder>=1.2.0",
+]
 
 [tool.hatch.version]
 source = "nodejs"
@@ -66,7 +72,7 @@ version_cmd = "hatch version"
 
 [tool.jupyter-releaser.hooks]
 before-build-npm = [
-    "python -m pip install 'jupyterlab>=4.1.0a4,<5'",
+    "python -m pip install 'jupyter-builder>=1.2.0,<2'",
     "jlpm",
     "jlpm build:prod"
 ]

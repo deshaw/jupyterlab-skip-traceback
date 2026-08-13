@@ -34,6 +34,7 @@ const extension: IRenderMime.IExtension = {
 
 const extensionSettings: JupyterFrontEndPlugin<void> = {
   id: `${PLUGIN_NAME}:plugin`,
+  description: 'Renders errors with a copy/paste button and expand/collapse',
   autoStart: true,
   requires: [IRenderMimeRegistry, ISettingRegistry],
   activate: function (
@@ -67,7 +68,6 @@ const extensionSettings: JupyterFrontEndPlugin<void> = {
         );
       },
     );
-    // eslint-disable-next-line no-console
     console.log('JupyterLab extension jupyterlab-skip-traceback is activated!');
   },
 };
