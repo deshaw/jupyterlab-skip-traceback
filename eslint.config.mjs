@@ -58,6 +58,7 @@ export default defineConfig([
       ],
       curly: ['error', 'all'],
       eqeqeq: 'error',
+      'jupyter/no-untranslated-string': 'off',
       'prefer-arrow-callback': 'error'
     }
   },
