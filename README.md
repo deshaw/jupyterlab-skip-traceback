@@ -33,7 +33,7 @@ The `jlpm` command is JupyterLab's pinned version of
 # Clone the repo to your local environment
 # Change directory to the jupyterlab-skip-traceback directory
 # Install package in development mode
-pip install -e .[dev]
+pip install -e ".[dev]"
 # Link your development version of the extension with JupyterLab
 jupyter-builder develop . --overwrite
 # Rebuild extension Typescript source after making changes
