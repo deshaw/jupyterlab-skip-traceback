@@ -36,7 +36,7 @@ jobs:
       uses: jupyterlab/maintainer-tools/.github/actions/base-setup@95d85449e4f3f352e261221f6529f8ed307f5728 # v1
 
     - name: Install dependencies
-      run: python -m pip install -U "jupyterlab>=4.1.0a4,<5"
+      run: python -m pip install -U "jupyterlab>=4.1,<5"
 
     - name: Lint the extension
       run: |
@@ -80,7 +80,7 @@ jobs:
     - name: Install Python
       uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
       with:
-        python-version: '3.9'
+        python-version: '3.10'
         architecture: 'x64'
     - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
       with:
